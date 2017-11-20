@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Stray number</title>
+  </head>
+  <body>
+    <p>You are given an odd-length array of integers, in which all of them are the same, except for one single number. Implement the method stray which accepts such array, and returns that single different number.</p>
+    <p>The input array will always be valid! (odd-length >= 3)</p>
+    <p>[1, 1, 2] => 2</p>
+    <p>[17, 17, 3, 17, 17, 17, 17] => 3</p>
+
+    <script type="text/javascript">
+      function stray(arr) {
+        const filteredArray = arr.filter(num => num === arr[1])
+        if (filteredArray.length === 1) {
+          return filteredArray[0]
+        } else {
+          return arr.filter(num => num !== filteredArray[0])[0]
+        }
+      }
+
+      function stray2(numbers) {
+        for (var i in numbers){
+          if (numbers.indexOf(numbers[i]) === numbers.lastIndexOf(numbers[i])){return numbers[i]}
+        }
+      }
+
+      function stray3(numbers) {
+        var sorted = numbers.sort();
+
+        if(sorted[0] != sorted[1]) {
+          return sorted[0]
+        }
+        return sorted[sorted.length-1]
+      }
+    </script>
+
+  </body>
+</html>
