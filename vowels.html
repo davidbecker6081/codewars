@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Vowel Occurences</title>
+  </head>
+  <body>
+    <p>We want to know the index of the vowels in a given word, for example, there are two vowels in the word super (the second and fourth letters). So given a string "super", we should return a list of [2, 4].</p>
+
+    <p>Some examples:</p>
+    <p>Mmmm  => []</p>
+    <p>Super => [2,4]</p>
+    <p>Apple => [1,5]</p>
+    <p>YoMama -> [1,2,4,6]</p>
+
+    <p>NOTE: Vowels in this context refers to English Language Vowels - a e i o u y</p>
+    <p>NOTE: this is indexed from [1..n] (not zero indexed!)</p>
+
+    <script type="text/javascript">
+      function vowelIndices(word) {
+        const indices = [];
+        const vowels = ['a', 'e', 'i', 'o', 'u', 'y'];
+        
+        vowels.forEach(vowel => {
+          if (word.toLowerCase().includes(vowel)) {
+            [...word.toLowerCase()].forEach((letter, i) => {
+              if (letter === vowel) {
+                indices.push(i + 1)
+              }
+            })
+          }
+        })
+        return indices.sort((a,b) => a - b)
+      }
+    </script>
+  </body>
+</html>
