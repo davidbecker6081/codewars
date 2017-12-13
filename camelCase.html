@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>camelCase</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      //Complete the solution so that the function will break up camel casing, using a space between words.
+
+      const solution = (string) => {
+        const indexOfUpper = [...string].findIndex((letter) => letter === letter.toUpperCase())
+        return string.slice(0, indexOfUpper) + ' ' + string.slice(indexOfUpper)
+      }
+    </script>
+  </body>
+</html>
