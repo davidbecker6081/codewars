@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Seven Ate Nine</title>
+  </head>
+  <body>
+    <p>Write a function that removes every lone 9 that is inbetween 7s.</p>
+    <p>sevenAte9('79712312') => '7712312'</p>
+    <p>sevenAte9('79797') => '777'</p>
+    
+    <script type="text/javascript">
+    function sevenAte9(str) {
+      const arr = [...str]
+
+      return arr.reduce((newStr, num, i, array) => {
+        if (num !== '9') {
+          newStr += num
+        } else if (array[i-1] !== '7' || array[i+1] !== '7') {
+          newStr += num
+        }
+        return newStr
+      }, '')
+    }
+    </script>
+  </body>
+</html>
