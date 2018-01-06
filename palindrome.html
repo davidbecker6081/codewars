@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Palindrome</title>
+  </head>
+  <body>
+    <p>Write a function that determines if a string is a palindrome.</p>
+    <p>String will always be lowercase and a strictly a string.</p>
+    <script type="text/javascript">
+    //For Loop Method
+    function isPalindrome1(string) {
+
+      for (let i = 0; i < string.length/2; i++) {
+        if (string[i] !== string[string.length - 1 - i]) {
+          return false
+        }
+      }
+
+      return true
+    };
+
+    //Recursive Method
+    function isPalindrome2(string) {
+      // base case if string's length is less than or equal to 1
+      // if either ends of the string are different, we can conclude that it is not a palindrome, return false
+      if (string.length <= 1) {
+        return true
+      } else if (string.charAt(0) !== string.charAt(string.length - 1)) {
+        return false
+      }
+      // if both the beginning and end letters of the string are the same, we can pop them off of the string and call the function again with the new string until the string is a length 1 or less
+
+      return isPalindrome2(string.substring(1, string.length - 1))
+    };
+
+    // isPalindrome1('tacocat');
+    // isPalindrome1('tacocata');
+    // isPalindrome2('tacocat');
+    // isPalindrome2('tacocata');
+    </script>
+  </body>
+</html>
