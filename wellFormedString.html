@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Well Formed Strings</title>
+  </head>
+  <body>
+    <p>Justify if a string consists of valid parentheses.</p>
+    <p>You are given an array of strings. Each of these strings is made up of bracket characters only : '(', ')', '{',  '}',  '[',  ']'.</p>
+    <p>Every opening bracket has a corresponding closing bracket : '(' with ')', '{' with '}', and '[' with ']'.</p>
+    <p>Two brackets form a pair if they have no open bracket of any type between them. For example: '[}]' is invalid, '[{}]' is valid.</p>
+    <p>The closing bracket of a pair must be of the same type as the opening bracket, e.g. '( )' is valid, but '[ )' is not valid.</p>
+    <p>wellFormed('[()]{}{[()()]()}') => true</p>
+    <p>wellFormed('[(])') => false</p>
+
+    <script type="text/javascript">
+      const wellFormed = (string) => {
+        const opening = ['(', '[', '{'];
+        const closing = [')', ']', '}'];
+
+        if (string.length === 0) {
+          return true
+        } else if (string.length === 1) {
+          return false
+        } else {
+          const stack = [];
+
+          for (let i = 0; i < string.length; i++) {
+            let char = string[i];
+
+            if (opening.indexOf(char) > -1) {
+              stack.push(char)
+            } else if (closing.indexOf(char) > -1) {
+              let expected = opening[closing.indexOf(char)];
+
+              if (stack.length === 0 || stack.pop() !== expected) {
+                return false
+              }
+            } else {
+              continue;
+            }
+          }
+          return stack.length === 0;
+        }
+      };
+    </script>
+  </body>
+</html>
