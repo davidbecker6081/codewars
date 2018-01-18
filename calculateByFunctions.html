@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Caculate By Functions</title>
+  </head>
+  <body>
+    <p>Calculate nested function calls with functions representing numbers or operands.</p>
+    <p>
+      seven(times(five())) => 35
+      four(plus(nine())) => 13
+      eight(minus(three())) => 5
+      six(dividedBy(two())) => 3
+    </p>
+    <script type="text/javascript">
+    function zero(calculation) {
+    	if (calculation) {
+    		return eval(0 + calculation);
+    	}
+    	return 0;
+    }
+    function one(calculation) {
+    	if (calculation) {
+    		return eval(1 + calculation);
+    	}
+    	return 1;
+    }
+    function two(calculation) {
+    	if (calculation) {
+    		return eval(2 + calculation);
+    	}
+    	return 2;
+    }
+    function three(calculation) {
+    	if (calculation) {
+    		return eval(3 + calculation);
+    	}
+    	return 3;
+    }
+    function four(calculation) {
+    	if (calculation) {
+    		return eval(4 + calculation);
+    	}
+    	return 4;
+    }
+    function five(calculation) {
+    	if (calculation) {
+    		return eval(5 + calculation);
+    	}
+    	return 5;
+    }
+    function six(calculation) {
+    	if (calculation) {
+    		return eval(6 + calculation);
+    	}
+    	return 6;
+    }
+    function seven(calculation) {
+    	if (calculation) {
+    		return eval(7 + calculation);
+    	}
+    	return 7;
+    }
+    function eight(calculation) {
+    	if (calculation) {
+    		return eval(8 + calculation);
+    	}
+    	return 8;
+    }
+    function nine(calculation) {
+    	if (calculation) {
+    		return eval(9 + calculation);
+    	}
+    	return 9;
+    }
+
+    function plus(num) {
+    	return `+${num}`;
+    }
+    function minus(num) {
+    	return `-${num}`;
+    }
+    function times(num) {
+    	return `*${num}`;
+    }
+    function dividedBy(num) {
+    	return `/${num}`;
+    }
+</script>
+  </body>
+</html>
